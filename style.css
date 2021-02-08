@@ -1,0 +1,146 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(
+      to right top,
+      #ff3434,
+      #fe2c2c,
+      #fc2423,
+      #fa1a18,
+      #f80b0b
+    );
+    font-family: "Roboto", sans-serif;
+    background-repeat: no-repeat;
+  }
+  
+  main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    min-height: 500px;
+    flex-wrap: wrap;
+  }
+  span {
+    display: none;
+  }
+  
+  .row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    min-height: 500px;
+  }
+  
+  .moviebox {
+    width: 250px;
+    place-items: center;
+    place-content: center;
+    display: flex;
+    margin: 20px;
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+    background-color: transparent;
+    min-height: 300px;
+  }
+  
+  .fetchimg {
+    width: 400px;
+    place-items: center;
+    place-content: center;
+    filter: drop-shadow(12px 12px 25px rgba(0, 0, 0, 0.5));
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    cursor: pointer;
+  
+    max-width: 100%;
+    background-color: white;
+    min-height: 300px;
+  }
+  
+  .fetchimg:hover {
+    transform: scale(1.1, 1.1);
+    transition: all ease-in-out 0.5s;
+  }
+  
+  .overlay {
+    width: 250px;
+    place-items: start;
+    place-content: center;
+    display: flex;
+    color: black;
+    font-weight: normal;
+    background-color: white;
+    flex-direction: column;
+    min-height: 380px;
+  }
+  
+  .overlay p {
+    padding: 10px;
+  }
+  header {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .header__row {
+    width: 100%;
+    min-height: 100px;
+    max-width: 89%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  
+  input {
+    padding: 10px 20px;
+    border: none;
+  }
+  h4 {
+    font-size: 14px;
+    color: #fff;
+    min-height: 30px;
+    width: auto;
+    margin: 5px;
+    padding: 20px 0;
+  }
+  
+  h4:nth-child(2) {
+    color: white;
+    background-color: #121212;
+    min-height: 0;
+    padding: 10px 30px;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  .datarow {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 10px;
+    text-align: center;
+  
+    flex-wrap: wrap;
+  }
+  .text5 {
+    color: white;
+  }
+  .text6 {
+    display: none !important;
+    color: white;
+  }
+  
