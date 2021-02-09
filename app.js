@@ -1,12 +1,25 @@
 const API =
-  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
+'https://api.themoviedb.org/3/movie/top_rated?api_key=ffef63f5e480a5ea5358d8b895638d8f&language=en-US&page=2';
 const IMGPATH = "https://image.tmdb.org/t/p/w1280";
 const SEARCHAPI =
   "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
 let video =
-  "https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=video&language=en-US";
+  `https://api.themoviedb.org/3/movie/13/videos?api_key=ffef63f5e480a5ea5358d8b895638d8f&language=en-US"`;
+  const trailer = `https://vimeo.com/${video}`;
+
 let bd = document.querySelector("input");
 let row = document.querySelector(".row");
+async function GetVideo() {
+   const res = await fetch(video);
+   const data = await res.json();
+   console.log(data);
+}
+
+GetVideo();
+
+
+
+
 async function getMovies(API) {
   const response = await fetch(API);
   const data = await response.json();
@@ -79,3 +92,12 @@ document.querySelector("form").addEventListener("submit", (e) => {
     span.style.display = "none";
   }
 });
+
+
+// -----------
+
+
+
+
+
+
