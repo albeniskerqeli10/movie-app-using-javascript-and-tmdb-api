@@ -59,7 +59,7 @@ body {
   }
   
   .moviebox {
-    width: 220px;
+    width: 250px;
     place-items: center;
     place-content: center;
     display: flex;
@@ -70,9 +70,11 @@ body {
     background-color: transparent;
     min-height: 300px;
   }
-  
+  .moviebox:nth-child(19) {
+    order: 1;
+  }
   .fetchimg {
-    width: 400px;
+    width: 250px;
     place-items: center;
     place-content: center;
     filter: drop-shadow(12px 12px 25px rgba(0, 0, 0, 0.5));

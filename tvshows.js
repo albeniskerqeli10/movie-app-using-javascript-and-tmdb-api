@@ -3,7 +3,9 @@ const API =
 const IMGPATH = "https://image.tmdb.org/t/p/w1280";
 const SEARCHAPI =
   "https://api.themoviedb.org/3/search/tv?api_key=ffef63f5e480a5ea5358d8b895638d8f&language=en-US&page=1&query=";
-
+  let currentText = document.querySelector('strong');
+  let  currentYear = new Date().getFullYear();
+  currentText.innerHTML = `${currentYear}`
 let bd = document.querySelector("input");
 let row = document.querySelector(".row");
 
