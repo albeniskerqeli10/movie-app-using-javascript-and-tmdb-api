@@ -59,7 +59,7 @@ body {
   }
   
   .moviebox {
-    width: 250px;
+    width: 700px;
     place-items: center;
     place-content: center;
     display: flex;
