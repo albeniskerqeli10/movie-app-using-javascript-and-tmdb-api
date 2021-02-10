@@ -1,15 +1,11 @@
 const API =
-'https://api.themoviedb.org/3/movie/top_rated?api_key=ffef63f5e480a5ea5358d8b895638d8f&language=en-US&page=2';
+'https://api.themoviedb.org/3/tv/popular?api_key=ffef63f5e480a5ea5358d8b895638d8f&language=en-US&page=1';
 const IMGPATH = "https://image.tmdb.org/t/p/w1280";
 const SEARCHAPI =
-  "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
-let currentText = document.querySelector('strong');
-let  currentYear = new Date().getFullYear();
-currentText.innerHTML = `${currentYear}`
+  "https://api.themoviedb.org/3/search/tv?api_key=ffef63f5e480a5ea5358d8b895638d8f&language=en-US&page=1&query=";
 
 let bd = document.querySelector("input");
 let row = document.querySelector(".row");
-
 
 
 
@@ -18,8 +14,7 @@ async function getMovies(API) {
   const data = await response.json();
 
   data.results.forEach((movie) => {
-
-    const { poster_path, original_title,genre_ids, genre_name, overview,vote_average, release_date } = movie;
+    const { poster_path, name, release, vote_average,overview, first_air_date } = movie;
     let fetchmovie = document.createElement("div");
     fetchmovie.classList.add("moviebox");
     let img = document.createElement("img");
@@ -27,12 +22,13 @@ async function getMovies(API) {
     img.src = `${IMGPATH + poster_path}`;
     img.addEventListener("click", () => {
       let overlay = document.createElement("div");
+      console.log("Working");
       overlay.classList.add("overlay");
       overlay.innerHTML = ` 
-      <h2 class="title">${original_title}</h2>
+      <h2 class="title">${name}</h2>
       <p>${overview}</p>
-      <h4 class="sub">Release Date : <b>${release_date}</b></h4> 
-      <h4 class="sub">Rating: <b>${vote_average}</b></h4>   `;
+      <h4 class="sub">First Air Date : <b>${first_air_date}</b></h4> 
+      <h4 class="sub">Rating: <b>${vote_average}</b></h4>  `;
       if (overlay.innerHTML.length === "100") {
         overlay.innerHTML.slice(0, 50);
       }
@@ -46,11 +42,8 @@ async function getMovies(API) {
         fetchmovie.style.flexDirection = "column";
       });
     });
-
-    
     let title = document.createElement("h4");
-    title.innerHTML = `${original_title}`;
-  
+    title.innerHTML = `${name}`;
 
     let datarow = document.createElement("div");
     datarow.classList.add("datarow");
@@ -78,17 +71,7 @@ document.querySelector("form").addEventListener("submit", (e) => {
       row.innerHTML = "";
     }
   }
-
-  if (getMovies(!SEARCHAPI + !searchTerm)) {
-    span.style.display = "flex!important";
-  } else {
-    span.style.display = "none";
-  }
-});
-
-
-// -----------
-
+})
 
 
 
